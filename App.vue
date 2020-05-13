@@ -1,15 +1,27 @@
 <template>
-  <img alt="Vue logo" src="./logo.png" />
-  <HelloWorld msg="Hello Vue 3.0 + Vite" />
+  <div>
+    <BallGame />
+    <GithubRibbon class="github-ribbon" />
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import BallGame from "./components/BallGame.vue";
+import GithubRibbon from "./components/GithubRibbon.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
+    BallGame,
+    GithubRibbon
   }
-}
+};
 </script>
+
+<style scoped>
+.github-ribbon {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+</style>
