@@ -26,6 +26,7 @@ export function useBall() {
 
   return {
     position,
+    velocity,
     radius,
     update,
     draw,
