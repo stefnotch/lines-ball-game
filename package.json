@@ -1,9 +1,15 @@
 {
   "name": "lines-ball-game",
   "version": "0.0.0",
+  "homepage": "https://github.com/stefnotch/lines-ball-game",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stefnotch/lines-ball-game.git"
+  },
   "scripts": {
     "dev": "vite",
-    "build": "vite build"
+    "build": "vite build",
+    "deploy": "node utils/publish.js"
   },
   "dependencies": {
     "vue": "^3.0.0-beta.10"
