@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <BallGame />
     <GithubRibbon class="github-ribbon" />
   </div>
@@ -19,6 +19,9 @@ export default {
 </script>
 
 <style scoped>
+.container {
+  display: flex;
+}
 .github-ribbon {
   position: absolute;
   top: 0;

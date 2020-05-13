@@ -12,6 +12,7 @@
     "deploy": "node utils/publish.js"
   },
   "dependencies": {
+    "gl-matrix": "^3.3.0",
     "vue": "^3.0.0-beta.10"
   },
   "devDependencies": {
