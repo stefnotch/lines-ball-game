@@ -10,5 +10,6 @@
     "baseUrl": ".",
     "lib": ["esnext", "dom", "dom.iterable", "scripthost"]
   },
+  "include": ["**/*.js", "**/*.ts", "**/*.vue"],
   "exclude": ["node_modules"]
 }
