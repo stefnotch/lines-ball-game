@@ -1,12 +1,14 @@
+import type { vec2 } from "gl-matrix";
+
 export interface Line {
-  from: [number, number];
-  to: [number, number];
+  start: vec2;
+  end: vec2;
   isBouncy: boolean;
 }
 
 export interface Level {
   ball: {
-    position: [number, number];
+    position: vec2;
   };
   lines: Line[];
 }

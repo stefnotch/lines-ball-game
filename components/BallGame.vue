@@ -12,7 +12,7 @@ import {
   onUnmounted,
   onBeforeUnmount
 } from "vue";
-import { useBall } from "./../src/game";
+import { useBall, useLines } from "./../src/game";
 import { useLevels } from "./../src/levels/levels";
 import { vec2 } from "gl-matrix";
 
@@ -37,11 +37,14 @@ export default defineComponent({
     const { canvas, ctx } = useCanvas();
 
     const ball = useBall();
+    const lines = useLines();
     const levels = useLevels();
 
     watchEffect(() => {
       vec2.copy(ball.position, levels.level.value.ball.position);
       vec2.scale(ball.velocity, ball.velocity, 0);
+
+      lines.lines.value = levels.level.value.lines;
     });
 
     function movingAverage(avg: number, newValue: number) {
@@ -63,6 +66,9 @@ export default defineComponent({
 
       ball.update(deltaTime);
       ball.draw(ctx.value);
+
+      lines.draw(ctx.value);
+      lines.collides(ball.position, ball.radius.value);
 
       const borderPadding = 20;
       if (
